@@ -6,6 +6,6 @@ services:
     ports:
       - 5432
     environment:
-      POSTGRES_USER: durin
-      POSTGRES_PASSWORD: SpeakFriendAndEnter
-      POSTGRES_DB: tin
+      POSTGRES_USER: webmaster
+      POSTGRES_PASSWORD: EventN0tifY
+      POSTGRES_DB: pulse

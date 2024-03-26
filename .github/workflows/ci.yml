@@ -84,7 +84,7 @@ jobs:
 
       - name: Run tests
         env:
-          DATABASE_URL: postgres://durin:SpeakFriendAndEnter@localhost:5432/tin
+          DATABASE_URL: postgres://webmaster:EventN0tifY@localhost:5432/pulse
         run: just test
 
   build:

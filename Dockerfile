@@ -18,5 +18,5 @@ ARG VCS_REVISION
 RUN VCS_REVISION=$VCS_REVISION cargo build --release
 
 FROM gcr.io/distroless/cc-debian12
-COPY --from=builder /app/target/release/tin /
-CMD ["./tin"]
+COPY --from=builder /app/target/release/pulse-api /
+CMD ["./pulse-api"]
