@@ -7,7 +7,7 @@ use axum::{
 use cynic::QueryBuilder;
 use http_body_util::BodyExt; // for `collect`
 use serde_json as json;
-use tin::route::app;
+use pulse_api::route::app;
 use tower::util::ServiceExt;
 
 use super::{graphql::queries::HealthQuery, schema::HealthResponse};

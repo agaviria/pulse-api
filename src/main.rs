@@ -5,10 +5,10 @@ use std::{
 
 use tokio::net::TcpListener;
 
-use tin::{config::Config, logger, route::app};
+use pulse_api::{config::Config, logger, route::app};
 
 #[tokio::main]
-async fn main() -> Result<(), tin::Error> {
+async fn main() -> Result<(), pulse_api::Error> {
     let config = Arc::new(Config::load()?);
     logger::init(&config)?;
 

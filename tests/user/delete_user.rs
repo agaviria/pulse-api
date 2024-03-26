@@ -6,7 +6,7 @@ use axum::{
 use cynic::{MutationBuilder, QueryBuilder};
 use http_body_util::BodyExt;
 use serde_json as json;
-use tin::route::app;
+use pulse_api::route::app;
 use tower::{util::ServiceExt, Service};
 
 use super::{fake_user, teardown};

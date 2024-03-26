@@ -1,7 +1,7 @@
 use std::sync::Arc;
 
 use anyhow::Result;
-use tin::{config::Config, db};
+use pulse_api::{config::Config, db};
 
 mod graphql;
 pub mod schema;
