@@ -1666,6 +1666,39 @@ dependencies = [
 ]
 
 [[package]]
+name = "pulse-api"
+version = "1.2.0"
+dependencies = [
+ "anyhow",
+ "async-graphql",
+ "async-graphql-axum",
+ "axum",
+ "base64 0.21.7",
+ "chrono",
+ "cynic",
+ "dotenv",
+ "frunk",
+ "frunk_core",
+ "http-body-util",
+ "hyper",
+ "mime",
+ "serde",
+ "serde_json",
+ "sqlx",
+ "thiserror",
+ "time",
+ "tokio",
+ "tower",
+ "tracing",
+ "tracing-subscriber",
+ "ulid",
+ "url",
+ "utoipa",
+ "utoipa-swagger-ui",
+ "uuid",
+]
+
+[[package]]
 name = "quote"
 version = "1.0.35"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2439,39 +2472,6 @@ name = "time-core"
 version = "0.1.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ef927ca75afb808a4d64dd374f00a2adf8d0fcff8e7b184af886c3c87ec4a3f3"
-
-[[package]]
-name = "tin"
-version = "1.2.0"
-dependencies = [
- "anyhow",
- "async-graphql",
- "async-graphql-axum",
- "axum",
- "base64 0.21.7",
- "chrono",
- "cynic",
- "dotenv",
- "frunk",
- "frunk_core",
- "http-body-util",
- "hyper",
- "mime",
- "serde",
- "serde_json",
- "sqlx",
- "thiserror",
- "time",
- "tokio",
- "tower",
- "tracing",
- "tracing-subscriber",
- "ulid",
- "url",
- "utoipa",
- "utoipa-swagger-ui",
- "uuid",
-]
 
 [[package]]
 name = "tinyvec"

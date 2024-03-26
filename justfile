@@ -35,15 +35,15 @@ run:
 
 # Build the container image.
 image-build:
-    podman build --tag tin:latest --build-arg VCS_REVISION=$(git rev-parse --short HEAD) .
+    docker build --tag pulseapi:latest --build-arg VCS_REVISION=$(git rev-parse --short HEAD) .
 
 # Run the container.
 image-start service="":
-    podman-compose --file docker-compose.local.yml up {{ service }} -d
+    docker-compose --file docker-compose.local.yml up {{ service }} -d
 
 # Stop the container.
 image-stop:
-    podman-compose --file docker-compose.local.yml down
+    docker-compose --file docker-compose.local.yml down
 
 # Restart the containers.
 image-restart:

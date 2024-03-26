@@ -1,17 +1,16 @@
 [package]
 # طين is an arabic word for Clay
-name = "tin"
+name = "pulse-api"
 version = "1.2.0"
-authors = ["azzamsa <vcs@azzamsa.com>"]
-categories = ["web-programming"]
+authors = ["alejandro <mr.gaviria@gmail.com>"]
+categories = ["api"]
 edition = "2021"
 exclude = ["/README.md"]
-keywords = ["boilerplate"]
 license = "MIT"
 publish = false
-repository = "https://github.com/azzamsa/tin"
+repository = "https://github.com/agaviria/pulse-api"
 rust-version = "1.73.0"
-description = "Rust GraphQL Template"
+description = "Rust GraphQL API"
 
 [profile.release]
 strip = true
