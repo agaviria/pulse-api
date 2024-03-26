@@ -1,52 +1,48 @@
-<div align="center">
-
-<img src='docs/logo.svg' width=250px />
-
-<br/>
-<h4>Rust GraphQL Template 🏗️</h4>
-
-<a href="https://github.com/azzamsa/tin/actions/workflows/ci.yml">
-    <img src="https://github.com/azzamsa/tin/actions/workflows/ci.yml/badge.svg" alt="Build status" />
-  </a>
-
-</div>
-
----
+## Pulse API - uses [Tin](https://github.com/azzamsa/tin) to setup Rust GraphQL API for EventPulse.
 
 ## Features
 
-- [Async-GraphQL](https://github.com/async-graphql/async-graphql) GraphQL server library.
+- [Async-GraphQL](https://github.com/async-graphql/async-graphql) GraphQL server
+  library.
   - Relay-compatible cursor-based pagination.
   - Playground disabled in the production environment for performance reasons.
   - Store GraphQL schema to file automatically.
 - [SQLx](https://github.com/launchbadge/sqlx) SQL toolkit.
 - [Axum](https://github.com/tokio-rs/axum) web framework.
 - [Tracing](https://github.com/tokio-rs/tracing) with local timestamp.
-- [Frunk](https://github.com/lloydmeta/frunk) to avoid writing repetitive boilerplate.
-- [utoipa](https://github.com/juhaku/utoipa) Auto-generated OpenAPI documentation.
+- [Frunk](https://github.com/lloydmeta/frunk) to avoid writing repetitive
+  boilerplate.
+- [utoipa](https://github.com/juhaku/utoipa) Auto-generated OpenAPI
+  documentation.
 - [git-cliff](https://github.com/orhun/git-cliff) Changelog Generator.
 - Exhaustive Integration tests.
   - Uses [Cynic](https://github.com/obmarg/cynic) for GraphQL client.
   - [Hurl](https://github.com/Orange-OpenSource/hurl) for E2E test.
-- Fast and tiny image container. Using [cargo-chef](https://github.com/LukeMathWalker/cargo-chef) and `scratch` or `distroless` image.
+- Fast and tiny image container. Using
+  [cargo-chef](https://github.com/LukeMathWalker/cargo-chef) and `scratch` or
+  `distroless` image.
 - GitHub Action for CI and release.
-- ~~Git hooks for continuous development (format, lint, test).~~. [Removed](https://github.com/azzamsa/tin/commit/d9906164db7eb30cf66e2ed32edb220c0787fe13)
-- Consistent formatting using [dprint](https://github.com/dprint/dprint) for non Rust files (Markdown, Dockerfiles, Etc).
+- ~~Git hooks for continuous development (format, lint, test).~~.
+  [Removed](https://github.com/azzamsa/tin/commit/d9906164db7eb30cf66e2ed32edb220c0787fe13)
+- Consistent formatting using [dprint](https://github.com/dprint/dprint) for non
+  Rust files (Markdown, Dockerfiles, Etc).
 - [cargo-binstall](https://github.com/cargo-bins/cargo-binstall) support.
 - [cargo-release](https://github.com/crate-ci/cargo-release) workflow.
 
 ## Checklist
 
-When you use this template, try to follow the checklist to update your info properly
+When you use this template, try to follow the checklist to update your info
+properly
 
-- [ ] Change the author name in `LICENSE`
-- [ ] Change the package info in `Cargo.toml`
-- [ ] Change the application name:
-  - [ ] Database name and other values in `.env`, `.example.env`, and other container related files.
+- [x] Change the author name in `LICENSE`
+- [x] Change the package info in `Cargo.toml`
+- [x] Change the application name:
+  - [x] Database name and other values in `.env`, `.example.env`, and other
+        container related files.
   - [ ] The OpenAPI info in `routes.rs`
-  - [ ] App name in `release.yml`
-  - [ ] Project URL in `cliff.toml`
-  - [ ] App name in the import statements across Rust source and tests files.
+  - [x] App name in `release.yml`
+  - [x] Project URL in `cliff.toml`
+  - [x] App name in the import statements across Rust source and tests files.
 - [ ] Clean up the READMEs and remove routes
 
 And, enjoy :)
@@ -55,6 +51,9 @@ And, enjoy :)
 
 ```shell
 $ # Clone the repository
+
+$ # init local docker image
+$ docker build -t pulseapi:latest .
 
 $ # Run the database
 $ podman-compose -f docker-compose.local.yml up db -d
@@ -67,10 +66,14 @@ Go to the playground `http://127.0.0.1:8000/playground` to see the schema.
 
 ## Navigating the Code
 
-All the features can be found in the [CHANGELOG](CHANGELOG.md) file tagged with `feat`.
-The file only contains user-facing changes, so you won't get lost navigating the code.
+All the features can be found in the [CHANGELOG](CHANGELOG.md) file tagged with
+`feat`. The file only contains user-facing changes, so you won't get lost
+navigating the code.
 
 ## Credits
 
-- Clean and Scalable Architecture for Web Applications in Rust by Sylvain Kerkour. [Article](https://kerkour.com/rust-web-application-clean-architecture), [Code](https://github.com/skerkour/bloom-legacy/tree/v2-e2ee).
+- Clean and Scalable Architecture for Web Applications in Rust by Sylvain
+  Kerkour.
+  [Article](https://kerkour.com/rust-web-application-clean-architecture),
+  [Code](https://github.com/skerkour/bloom-legacy/tree/v2-e2ee).
 - Icons and emoji from [Noto Emoji](https://github.com/googlefonts/noto-emoji)
