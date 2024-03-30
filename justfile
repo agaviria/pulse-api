@@ -39,7 +39,7 @@ image-build:
 
 # Run the container.
 image-start service="":
-    docker-compose --file docker-compose.local.yml up {{ service }} -d
+    docker-compose --file docker-compose.local.yml up -d {{ service }} 
 
 # Stop the container.
 image-stop:

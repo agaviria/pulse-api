@@ -2,3 +2,4 @@
 cdata
 
 .env
+.init-db.sh

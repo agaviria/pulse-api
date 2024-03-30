@@ -1,22 +1,33 @@
-# Use `scratch` to get more smaller image.
-# Read [Tiny and Fast Docker image for Rust Application](https://azzamsa.com/n/rust-docker/)
+# Use the official PostgreSQL image
+FROM postgres:16
 
-ARG VCS_REVISION
+# Switch to root user temporarily to execute commands with elevated permissions
+USER root
 
-FROM docker.io/lukemathwalker/cargo-chef:0.1.62-rust-1.74 AS chef
-WORKDIR app
+# Install pg-ulid into the PostgreSQL image
+RUN apt-get update && apt-get install -y \
+    make \
+    gcc \
+    git \
+    postgresql-server-dev-16
 
-FROM chef AS planner
-COPY . .
-RUN cargo chef prepare --recipe-path recipe.json
+# Clone the repository
+RUN git clone https://github.com/andrielfn/pg-ulid.git /tmp/pg-ulid
 
-FROM chef AS builder
-COPY --from=planner /app/recipe.json recipe.json
-RUN cargo chef cook --release --recipe-path recipe.json
-COPY . .
-ARG VCS_REVISION
-RUN VCS_REVISION=$VCS_REVISION cargo build --release
+# Change directory to the repository
+WORKDIR /tmp/pg-ulid
 
-FROM gcr.io/distroless/cc-debian12
-COPY --from=builder /app/target/release/pulse-api /
-CMD ["./pulse-api"]
+# Install the repository
+RUN make install
+
+# Cleanup unnecessary packages and files
+RUN apt-get purge -y \
+    make \
+    gcc \
+    git \
+    postgresql-server-dev-16 && \
+    apt-get autoremove -y && \
+    rm -rf /var/lib/apt/lists/* /tmp/pg-ulid
+
+# Copy the custom initialization script
+COPY init-db.sh /docker-entrypoint-initdb.d/
